@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Friend.css";
+import { Link } from 'react-router-dom';
 
 const Friend = ({friend}) => {
     const {name,email,username,id} = friend;
@@ -7,7 +8,7 @@ const Friend = ({friend}) => {
         <div className='friend'>
             <h2>Name: {name}</h2>
             <p>email: {email}</p>
-            <p>UserName: {username}</p>
+            <p>UserName: <Link to={`/friends/ ${id}`}>{username}</Link></p>
         </div>
     );
 };
